@@ -1,0 +1,53 @@
+======================================================================
+  BS8414 FunDiff surrogate — Stage 1: Function Autoencoder
+======================================================================
+Device: cuda (NVIDIA GeForce RTX 4090)
+  excluded: BS8414_DCLG_Test7 (declares insulation system PF like 33 other decks, but its Phenolic_Foam MATL is inert - HEAT_OF_REACTION absent (0 kJ/kg) with REFERENCE_TEMPERATURE=429 degC - where every other PF deck decomposes at HEAT_OF_REACTION=400 with no explicit reference temperature (cp 1.2 vs 1.5, k 0.020 vs 0.022, rho 32 vs 39). Same defect class as the debug case above: a different system under the same name. Found 2026-08-19 by explain_part1.check_group_determinism, which verifies that an insulation id fixes its material block; this was the only violation in 185 cases)
+    loaded 25/184
+    loaded 50/184
+    loaded 75/184
+    loaded 100/184
+    loaded 125/184
+    loaded 150/184
+    loaded 175/184
+  184 cases, fields (184, 5, 181, 128, 64) float16 (2.54 GB)
+  norm stats fitted on 141 training sims (global mean 109.1 degC, sd 201.6)
+  [train] 557 functions (141 sims, 3.30 GB in RAM)
+  [valid] 84 functions (20 sims, 0.50 GB in RAM)
+  [test] 95 functions (23 sims, 0.56 GB in RAM)
+  FAE params: 7,526,401
+  Train 557  Valid 84  Test 95 functions
+
+  Ep   1 T:1.1318 V:1.1022 | mse:1.0197 ssim:0.743 grow:0.0055 eng:0.1199 lr:2.37e-04
+  Ep  10 T:1.1222 V:1.1563 | mse:1.0170 ssim:0.695 grow:0.0027 eng:0.1818 lr:9.79e-04
+  Ep  20 T:1.1086 V:1.1120 | mse:1.0026 ssim:0.701 grow:0.0067 eng:0.1474 lr:9.44e-04
+  Ep  30 T:0.8473 V:1.0934 | mse:0.7445 ssim:0.675 grow:0.0740 eng:0.1708 lr:9.10e-04
+  Ep  40 T:0.3455 V:0.9404 | mse:0.2845 ssim:0.397 grow:0.0500 eng:0.1740 lr:8.77e-04
+  Ep  50 T:0.2641 V:0.6722 | mse:0.2147 ssim:0.322 grow:0.0297 eng:0.1593 lr:8.45e-04
+  Ep  60 T:0.2389 V:0.3573 | mse:0.1918 ssim:0.306 grow:0.0248 eng:0.1925 lr:8.14e-04
+  Ep  70 T:0.2239 V:0.2556 | mse:0.1803 ssim:0.283 grow:0.0219 eng:0.1808 lr:7.85e-04
+  Ep  80 T:0.2070 V:0.2285 | mse:0.1651 ssim:0.272 grow:0.0201 eng:0.1732 lr:7.56e-04
+  Ep  90 T:0.2145 V:0.2079 | mse:0.1716 ssim:0.281 grow:0.0194 eng:0.1303 lr:7.29e-04
+  Ep 100 T:0.2034 V:0.1992 | mse:0.1618 ssim:0.271 grow:0.0195 eng:0.1475 lr:7.03e-04
+  Ep 110 T:0.2075 V:0.1841 | mse:0.1672 ssim:0.263 grow:0.0176 eng:0.1556 lr:6.77e-04
+  Ep 120 T:0.1825 V:0.1780 | mse:0.1434 ssim:0.254 grow:0.0157 eng:0.1538 lr:6.53e-04
+  Ep 130 T:0.1728 V:0.1757 | mse:0.1350 ssim:0.246 grow:0.0151 eng:0.1695 lr:6.29e-04
+  Ep 140 T:0.1731 V:0.1779 | mse:0.1349 ssim:0.248 grow:0.0144 eng:0.1634 lr:6.06e-04
+  Ep 150 T:0.1715 V:0.1714 | mse:0.1335 ssim:0.248 grow:0.0156 eng:0.1330 lr:5.84e-04
+  Ep 160 T:0.1722 V:0.1713 | mse:0.1335 ssim:0.252 grow:0.0161 eng:0.1631 lr:5.63e-04
+  Ep 170 T:0.1602 V:0.1734 | mse:0.1239 ssim:0.235 grow:0.0134 eng:0.1941 lr:5.43e-04
+  Ep 180 T:0.1588 V:0.1615 | mse:0.1218 ssim:0.240 grow:0.0135 eng:0.1765 lr:5.23e-04
+  Ep 190 T:0.1667 V:0.1641 | mse:0.1295 ssim:0.242 grow:0.0141 eng:0.1654 lr:5.04e-04
+  Ep 200 T:0.1590 V:0.1547 | mse:0.1223 ssim:0.238 grow:0.0131 eng:0.1905 lr:4.86e-04
+  Ep 210 T:0.1517 V:0.1619 | mse:0.1164 ssim:0.229 grow:0.0128 eng:0.1690 lr:4.68e-04
+  Ep 220 T:0.1511 V:0.1634 | mse:0.1147 ssim:0.236 grow:0.0134 eng:0.1567 lr:4.51e-04
+  Ep 230 T:0.1495 V:0.1766 | mse:0.1133 ssim:0.235 grow:0.0123 eng:0.1631 lr:4.35e-04
+  Ep 240 T:0.1431 V:0.1721 | mse:0.1082 ssim:0.226 grow:0.0124 eng:0.1557 lr:4.19e-04
+  Ep 250 T:0.1495 V:0.1762 | mse:0.1136 ssim:0.232 grow:0.0125 eng:0.1925 lr:4.04e-04
+  Ep 260 T:0.1427 V:0.1714 | mse:0.1083 ssim:0.224 grow:0.0118 eng:0.1417 lr:3.89e-04
+  Early stop at ep 260.
+
+  Best valid MSE: 0.1547  (5858s)
+  Saved -> D:\VS_projects\bs8414_fundiff_kan_surrogate\models_part1_fundiff_r2\fae_best.pt
+  FAE full-grid reconstruction R2 [valid]: 0.8552
+  FAE full-grid reconstruction R2 [test]: 0.8454

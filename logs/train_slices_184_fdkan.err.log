@@ -1,0 +1,15 @@
+﻿python.exe : Traceback (most recent call last):
+At C:\Users\saipa\AppData\Local\Temp\claude\C--Thesis-Phd-SLR-note\a2f0209e-28c0-498e-9e90-87740696d7
+26\scratchpad\run_fundiff_part1.ps1:52 char:5
++     & $py -u train_slices_part1.py --members 1 --seed 42 --model-dir  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteEx 
+   ception
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "D:\VS_projects\bs8414_fundiff_kan_surrogate\train_slices_part1.py", line 389, in <module>
+    main()
+  File "D:\VS_projects\bs8414_fundiff_kan_surrogate\train_slices_part1.py", line 333, in main
+    print(f"\n  model: {MODEL_NAME}  ({count_parameters(Part1Surrogate()):,} params)")
+                                                        ^^^^^^^^^^^^^^^^
+TypeError: Part1KANDiT.__init__() missing 1 required positional argument: 'config'

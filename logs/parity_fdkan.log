@@ -1,0 +1,51 @@
+﻿==============================================================================
+  Part1 pipeline parity
+==============================================================================
+  file parity (SHA-256)
+    config_part1.py            OK   d5d2f07691af9433  (10 projects)
+    data_loader_part1.py       OK   e7a46565a6eccc27  (10 projects)
+    physics_part1.py           OK   b3f43fc32dc57c6b  (10 projects)
+    explain_part1.py           OK   1bdf6fd2bb7ff212  (10 projects)
+    causal_part1.py            OK   4f0aca2e650af395  (10 projects)
+    train_part1.py             OK   fee94fb47a3e771f  (4 projects)
+    evaluate_part1.py          OK   8df44667f5d3ac60  (4 projects)
+    slice_loader_part1.py      OK   950604f9c0f4c9ca  (6 projects)
+    part1_conditioning.py      OK   a7a913309aa5449e  (6 projects)
+    slice_losses_part1.py      OK   6797db15b32b37a4  (4 projects)
+    train_slices_part1.py      MISMATCH
+      585c680efc176c18  bs8414_slice_surrogate
+      fae56ce22f0b8321  samba_MLP
+      fae56ce22f0b8321  bs8414_physicsnemo_surrogate
+      fae56ce22f0b8321  bs8414_physicsnemo_kan_surrogate
+      -> re-copy from bs8414_KAN_surrogate / bs8414_slice_surrogate; never hand-edit a copy
+    evaluate_slices_part1.py   OK   812735fec81855c1  (4 projects)
+    kan_layers_part1.py        OK   b9fdb009533a5e60  (2 projects)
+  variable file (expected to differ)
+    6b106e5ecd56e361  bs8414_KAN_surrogate/model_part1.py
+    1ef2d3978eefa9fd  bs8414_MLP_surrogate/model_part1.py
+    82febd998814469c  bs8414_surrogate_model/model_part1.py
+    c7ed67b5ee2617e0  bs8414_samba_mlp_surrogate/model_part1.py
+    e12492fbd5bb194a  bs8414_slice_surrogate/model_part1.py
+    1eb12d5aac2cab8e  samba_MLP/model_part1.py
+    7a880b0eb96eed2e  bs8414_physicsnemo_surrogate/model_part1.py
+    399b84852ef3b257  bs8414_physicsnemo_kan_surrogate/model_part1.py
+    7433190a032260a9  bs8414_fundiff_surrogate/model_part1.py
+    65815ce162edf412  bs8414_fundiff_kan_surrogate/model_part1.py
+
+  thermocouple corpus (arrays built in each own venv)
+    bs8414_KAN_surrogate           n=184  params=d1617c829b32847c  tc=5e1620fbcb6ff72f  hrr=32a918b7b91345d3
+    bs8414_MLP_surrogate           n=184  params=d1617c829b32847c  tc=5e1620fbcb6ff72f  hrr=32a918b7b91345d3
+    bs8414_surrogate_model         n=184  params=d1617c829b32847c  tc=5e1620fbcb6ff72f  hrr=32a918b7b91345d3
+    bs8414_samba_mlp_surrogate     n=184  params=d1617c829b32847c  tc=5e1620fbcb6ff72f  hrr=32a918b7b91345d3
+    all 4 agree — 184 sims, identical arrays and split {'train': 141, 'valid': 20, 'test': 23}
+
+  slice corpus (arrays built in each own venv)
+    bs8414_slice_surrogate         n=184  params=d1617c829b32847c  fields=dbee1c2ddca37992  n_planes=736
+    samba_MLP                      n=184  params=d1617c829b32847c  fields=dbee1c2ddca37992  n_planes=736
+    bs8414_physicsnemo_surrogate   n=184  params=d1617c829b32847c  fields=dbee1c2ddca37992  n_planes=736
+    bs8414_physicsnemo_kan_surrogate n=184  params=d1617c829b32847c  fields=dbee1c2ddca37992  n_planes=736
+    bs8414_fundiff_surrogate       n=184  params=d1617c829b32847c  fields=dbee1c2ddca37992  n_planes=736
+    bs8414_fundiff_kan_surrogate   n=184  params=d1617c829b32847c  fields=dbee1c2ddca37992  n_planes=736
+    all 6 agree — 184 sims, identical arrays and split {'train': 141, 'valid': 20, 'test': 23}
+
+  PARITY BROKEN — do not compare results until this passes

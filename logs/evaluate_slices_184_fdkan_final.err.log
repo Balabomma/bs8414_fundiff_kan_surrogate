@@ -1,0 +1,9 @@
+﻿python.exe : no checkpoints in models_part1_slice_r1
+At C:\Users\saipa\AppData\Local\Temp\claude\C--Thesis-Phd-SLR-note\a2f0209e-28c0-498e-9e90-87740696d7
+26\scratchpad\run_fundiff_part1.ps1:57 char:5
++     & $py evaluate_slices_part1.py --model-dir $j.dir `
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (no checkpoints in models_part1_slice_r1:String) [], Rem 
+   oteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
